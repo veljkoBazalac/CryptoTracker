@@ -35,28 +35,46 @@ struct DetailView: View {
     }
     
     var body: some View {
-        ScrollView {
-            VStack(spacing: 20) {
-                Text("")
-                    .frame(height: 150)
-                // Overview section
-                overviewTitle
-                Divider()
-                overviewGrid
-                
-                // Additional Section
-                additionalTitle
-                Divider()
-                additionalGrid
+        ScrollView(showsIndicators: false) {
+            VStack {
+                ChartView(coin: vm.coin)
+                    .padding(.vertical)
+                VStack(spacing: 20) {
+                    // Overview section
+                    overviewTitle
+                    Divider()
+                    overviewGrid
+                    
+                    // Additional Section
+                    additionalTitle
+                    Divider()
+                    additionalGrid
+                }
+                .padding()
             }
-            .padding()
         }
         .navigationTitle(vm.coin.name)
+        .toolbar {
+            ToolbarItem(placement: .navigationBarTrailing) {
+                navBarTrailingItems
+            }
+        }
     }
 }
 
 extension DetailView {
+    // MARK: - Trailing Nav Bar Coin image and name
+    private var navBarTrailingItems: some View {
+        HStack {
+            Text(vm.coin.symbol.uppercased())
+                .font(.headline)
+            .foregroundColor(Color.theme.secondaryText)
+            CoinImageView(coin: vm.coin)
+                .frame(width: 25, height: 25)
+        }
+    }
     
+    // MARK: - Overview Title
     private var overviewTitle: some View {
         Text("Overview")
             .font(.title)
@@ -65,6 +83,7 @@ extension DetailView {
             .frame(maxWidth: .infinity, alignment: .leading)
     }
     
+    // MARK: - Overview Grid with statistics
     private var overviewGrid: some View {
         LazyVGrid(
             columns: columns,
@@ -77,6 +96,7 @@ extension DetailView {
             }
     }
     
+    // MARK: - Additional Title
     private var additionalTitle: some View {
         Text("Additional Details")
             .font(.title)
@@ -85,6 +105,7 @@ extension DetailView {
             .frame(maxWidth: .infinity, alignment: .leading)
     }
     
+    // MARK: - Additional Grid with statistics
     private var additionalGrid: some View {
         LazyVGrid(
             columns: columns,
@@ -98,6 +119,7 @@ extension DetailView {
     }
 }
 
+// MARK: - Preview
 struct DetailView_Previews: PreviewProvider {
     static var previews: some View {
         NavigationView {

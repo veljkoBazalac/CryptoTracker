@@ -22,6 +22,7 @@ struct CryptoTrackerApp: App {
             NavigationView {
                 HomeView()
                     .navigationBarHidden(true)
+                    .navigationBarTitleDisplayMode(.large)
             }
             .environmentObject(homeViewModel)
         }
