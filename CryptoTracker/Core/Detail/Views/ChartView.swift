@@ -131,6 +131,7 @@ extension ChartView {
     }
 }
 
+// MARK: - Preview
 struct ChartView_Previews: PreviewProvider {
     static var previews: some View {
         ChartView(coin: dev.coin)
