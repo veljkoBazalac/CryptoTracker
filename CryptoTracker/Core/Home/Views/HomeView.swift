@@ -7,12 +7,15 @@
 
 import SwiftUI
 
+
 struct HomeView: View {
     
     @EnvironmentObject private var vm : HomeViewModel
     @State private var showPortfolio: Bool = false // Animate to the right
     @State private var showPortfolioSheet: Bool = false // Show sheet
-    
+    @State private var selectedCoin: Coin? = nil
+    @State private var showDetailView: Bool = false
+
     var body: some View {
         ZStack {
             // Background
@@ -38,9 +41,15 @@ struct HomeView: View {
                 Spacer(minLength: 0)
             }
         }
+        .background(
+            NavigationLink(destination: DetailLoadingView(coin: $selectedCoin),
+                           isActive: $showDetailView ,
+                           label: {EmptyView()})
+        )
     }
 }
 
+// MARK: - UI Settings
 extension HomeView {
     // MARK: - Top Header View
     private var homeHeader: some View {
@@ -85,6 +94,9 @@ extension HomeView {
                                          leading: 0,
                                          bottom: 10,
                                          trailing: 10))
+                    .onTapGesture {
+                        segue(coin: coin)
+                    }
                 
             }
         }
@@ -100,6 +112,9 @@ extension HomeView {
                                          leading: 0,
                                          bottom: 10,
                                          trailing: 10))
+                    .onTapGesture {
+                        segue(coin: coin)
+                    }
                 
             }
         }
@@ -160,6 +175,15 @@ extension HomeView {
         .font(.caption)
         .foregroundColor(Color.theme.secondaryText)
         .padding(.horizontal)
+    }
+}
+
+// MARK: - Functions
+extension HomeView {
+    // MARK: - Segue to DetailView
+    private func segue(coin: Coin) {
+        selectedCoin = coin
+        showDetailView.toggle()
     }
 }
 
