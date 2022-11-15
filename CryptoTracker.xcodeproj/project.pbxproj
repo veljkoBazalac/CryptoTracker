@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D00E93C329238BF10009824A /* LaunchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D00E93C229238BF10009824A /* LaunchView.swift */; };
 		D03B5CD1291F9BBF00C912D9 /* LocalFileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D03B5CD0291F9BBF00C912D9 /* LocalFileManager.swift */; };
 		D03B5CD3291FA26A00C912D9 /* SearchBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D03B5CD2291FA26A00C912D9 /* SearchBarView.swift */; };
 		D03B5CD5291FA5F600C912D9 /* UIApplication.swift in Sources */ = {isa = PBXBuildFile; fileRef = D03B5CD4291FA5F600C912D9 /* UIApplication.swift */; };
@@ -48,6 +49,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		D00E93C229238BF10009824A /* LaunchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchView.swift; sourceTree = "<group>"; };
 		D03B5CD0291F9BBF00C912D9 /* LocalFileManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalFileManager.swift; sourceTree = "<group>"; };
 		D03B5CD2291FA26A00C912D9 /* SearchBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBarView.swift; sourceTree = "<group>"; };
 		D03B5CD4291FA5F600C912D9 /* UIApplication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIApplication.swift; sourceTree = "<group>"; };
@@ -100,6 +102,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		D00E93BE29238A520009824A /* Launch */ = {
+			isa = PBXGroup;
+			children = (
+				D00E93BF29238A5C0009824A /* Views */,
+			);
+			path = Launch;
+			sourceTree = "<group>";
+		};
+		D00E93BF29238A5C0009824A /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				D00E93C229238BF10009824A /* LaunchView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		D043EB4B291C0D3A005C4866 = {
 			isa = PBXGroup;
 			children = (
@@ -156,6 +174,7 @@
 			isa = PBXGroup;
 			children = (
 				D043EB6E291C12AD005C4866 /* Components */,
+				D00E93BE29238A520009824A /* Launch */,
 				D043EB69291C11DE005C4866 /* Home */,
 				D0FDCE5A2922461600B85C32 /* Detail */,
 				D0EBB8582922F2CE0063D033 /* Settings */,
@@ -401,6 +420,7 @@
 				D03B5CD5291FA5F600C912D9 /* UIApplication.swift in Sources */,
 				D0A4FD68291EF1950084B154 /* CoinImageViewModel.swift in Sources */,
 				D0D82605291EEE6900F1F161 /* CoinImageView.swift in Sources */,
+				D00E93C329238BF10009824A /* LaunchView.swift in Sources */,
 				D0B11771291E5B3800D3EAA7 /* CoinRowView.swift in Sources */,
 				D03B5CE1291FED0F00C912D9 /* PortfolioView.swift in Sources */,
 				D0AA232E291EDD3600159BA2 /* HomeViewModel.swift in Sources */,
@@ -560,9 +580,11 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_CFBundleDisplayName = "Crypto Tracker";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.finance";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -593,9 +615,11 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_CFBundleDisplayName = "Crypto Tracker";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.finance";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (

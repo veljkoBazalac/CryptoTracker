@@ -18,9 +18,14 @@ struct SettingsView: View {
     
     var body: some View {
         NavigationView {
-            List {
-                veljkoBazalacSection
-                coinGeckoSection
+            ZStack {
+                Color.theme.background.ignoresSafeArea()
+                List {
+                    veljkoBazalacSection
+                        .listRowBackground(Color.theme.background.opacity(0.5))
+                    coinGeckoSection
+                        .listRowBackground(Color.theme.background.opacity(0.5))
+                }
             }
             .font(.headline)
             .accentColor(.blue)
